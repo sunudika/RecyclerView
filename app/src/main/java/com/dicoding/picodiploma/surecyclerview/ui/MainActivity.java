@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.dicoding.picodiploma.surecyclerview.adapter.CardViewHeroAdapter;
 import com.dicoding.picodiploma.surecyclerview.adapter.GridHeroAdapter;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         rvHeroes.setLayoutManager(new LinearLayoutManager(this));
         ListHeroAdapter listHeroAdapter = new ListHeroAdapter(list);
         rvHeroes.setAdapter(listHeroAdapter);
+
+        listHeroAdapter.setOnItemClickCallback(this::showSelectedHero);
     }
 
     private void showRecyclerGrid() {
@@ -59,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         rvHeroes.setLayoutManager(new LinearLayoutManager(this));
         CardViewHeroAdapter cardViewHeroAdapter = new CardViewHeroAdapter(list);
         rvHeroes.setAdapter(cardViewHeroAdapter);
+    }
+
+    private void showSelectedHero(Hero hero) {
+        Toast.makeText(this, "Kamu memilih " + hero.getName(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
