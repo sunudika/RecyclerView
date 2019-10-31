@@ -32,7 +32,7 @@ public class GridHeroAdapter extends RecyclerView.Adapter<GridHeroAdapter.GridVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GridViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final GridViewHolder holder, int position) {
         Glide.with(holder.itemView.getContext())
                 .load(listHero.get(position).getPhoto())
                 .apply(new RequestOptions().override(350,550))
