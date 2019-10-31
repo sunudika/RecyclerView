@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         rvHeroes.setLayoutManager(new GridLayoutManager(this, 2));
         GridHeroAdapter gridHeroAdapter = new GridHeroAdapter(list);
         rvHeroes.setAdapter(gridHeroAdapter);
+
+        gridHeroAdapter.setOnItemClickCallback(this::showSelectedHero);
     }
 
     private void showRecyclerCardView() {
