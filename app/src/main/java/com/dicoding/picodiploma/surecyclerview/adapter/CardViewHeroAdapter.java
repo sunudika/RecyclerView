@@ -45,10 +45,10 @@ public class CardViewHeroAdapter extends RecyclerView.Adapter<CardViewHeroAdapte
         holder.tvName.setText(hero.getName());
         holder.tvDetail.setText(hero.getDetail());
 
-        holder.btnFavorite.setOnClickListener(v -> Toast.makeText(holder.itemView.getContext(), "Favorite" +
+        holder.btnFavorite.setOnClickListener(v -> Toast.makeText(holder.itemView.getContext(), "Kamu memilih " +
                 listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show());
 
-        holder.btnShare.setOnClickListener(v -> Toast.makeText(holder.itemView.getContext(), "Share" +
+        holder.btnShare.setOnClickListener(v -> Toast.makeText(holder.itemView.getContext(), "Kamu memilih " +
                 listHero.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show());
     }
 
